@@ -78,11 +78,13 @@ attribute.
 
 Defines which stash key to use for storing Moostash object.
 
+Default: C<m>
+
 =head2 class
 
 Defines Moostash class name.
 
-Defaults to MyApp::Moostash.
+Default: C<MyApp::Moostash>
 
 =cut
 
