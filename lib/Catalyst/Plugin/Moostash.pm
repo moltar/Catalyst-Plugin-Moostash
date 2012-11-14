@@ -35,8 +35,9 @@ Define your Moostash class:
  extends 'Catalyst::Plugin::Moostash::Base';
 
  has user_id => (
-     is  => 'rw',
-     isa => 'Int',
+     is     => 'ro',
+     isa    => 'Int',
+     writer => 'set_user_id',
  );
 
 Load plugin in MyApp class:
@@ -53,7 +54,7 @@ Then use it in your application:
  sub some_action : Local {
      my ($self, $c) = @_;
 
-     $c->moostash->user_id($user_id);
+     $c->moostash->set_user_id($user_id);
  }
 
 Since the Moostash object is stored in the stash, you can conveniently access it
@@ -79,7 +80,9 @@ Defines which stash key to use for storing Moostash object.
 
 =head2 class
 
-Defines Moostash class name. Defaults to MyApp::Moostash.
+Defines Moostash class name.
+
+Defaults to MyApp::Moostash.
 
 =cut
 
