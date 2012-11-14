@@ -1,29 +1,12 @@
-package Catalyst::Plugin::Moostash;
+=pod
 
-use warnings;
-use strict;
+=head1 NAME
 
-use MRO::Compat;
-use Module::Load;
+Catalyst::Plugin::Moostash - Provides Moose interface for stash
 
-use version 0.77; our $VERSION = version->declare('v0.1.0');
+=head1 VERSION
 
-# ABSTRACT: Provides Moose interface for stash
-
-sub moostash {
-    my $c = shift;
-
-    my $config    = $c->config->{'Plugin::Moostash'};
-    my $stash_key = $config->{stash_key} || 'm';
-    my $class     = $config->{class} || join('::', ref($c), 'Moostash');
-
-    if (not defined $c->stash->{$stash_key}) {
-        load $class;    ## Module::Load
-        $c->stash->{$stash_key} = $class->new(ctx => $c);
-    }
-
-    return $c->stash->{$stash_key};
-}
+version v0.1.0
 
 =head1 DESCRIPTION
 
@@ -81,6 +64,14 @@ Defines which stash key to use for storing Moostash object.
 
 Defines Moostash class name. Defaults to MyApp::Moostash.
 
-=cut
+=head1 AUTHOR
 
-1;
+Roman F. <romanf@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2012 by Roman F..
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
