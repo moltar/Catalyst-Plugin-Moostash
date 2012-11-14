@@ -8,8 +8,9 @@ extends 'Catalyst::Plugin::Moostash::Base';
 =cut
 
 has test_attr => (
-    is      => 'rw',
-    isa     => 'Int',
+    is     => 'ro',
+    isa    => 'Int',
+    writer => 'set_test_attr',
 );
 
-1; # eof
+1;    # eof

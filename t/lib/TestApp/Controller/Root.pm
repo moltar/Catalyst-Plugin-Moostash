@@ -29,7 +29,7 @@ The root page (/)
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-    $c->moostash->test_attr(7);
+    $c->moostash->set_test_attr(7);
 
     # Hello World
     $c->response->body( $c->moostash->test_attr );
