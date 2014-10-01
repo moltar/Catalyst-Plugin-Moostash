@@ -6,7 +6,7 @@ use strict;
 use MRO::Compat;
 use Module::Load;
 
-use version 0.77; our $VERSION = version->declare('v0.1.0');
+use version 0.77; our $VERSION = version->declare('v0.1.1');
 
 # ABSTRACT: Provides Moose interface for stash
 
