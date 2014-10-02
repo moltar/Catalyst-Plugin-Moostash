@@ -53,7 +53,7 @@ Attempt to render a view, if needed.
 
 =cut
 
-sub end : ActionClass('RenderView') {}
+sub end {}
 
 
 __PACKAGE__->meta->make_immutable;
